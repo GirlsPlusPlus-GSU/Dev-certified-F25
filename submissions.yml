@@ -12,10 +12,10 @@ submissions:
   #   notes: Uses sample data only; no secrets
 
   # === Add your team’s entry BELOW this line ===
-  - team: <your-team-name>
-    repo: https://github.com/<you>/<your-repo>
-    ref: <tag-or-full-commit-sha>
-    title: <short-title>
-    contact: <@github-handle-or-email>
+  - team: Team Cherry
+    repo: https://github.com/CelineCherry/dev-cert-Cherry
+    ref: dev-certified-f25
+    title: Tasked
+    contact: @CelineCherry
     members: [<optional-list-of-members>]
-    notes: <optional-one-line>
+    notes: Currently does not have complete functionality, can input custom data with inputs on the left side of the screen.

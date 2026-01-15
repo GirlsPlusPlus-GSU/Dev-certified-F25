@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css"/>
+  <title>Task Organizer</title>
+</head>
+
+<body>
+  <header>
+    <p id="header_title">Task Organizer</p>
+
+    <!--------------------------------------------------------------->
+    <!--                     Hamburger Menu                        -->
+    <!--------------------------------------------------------------->
+    <div class="container" onclick="xmenu(this)" style="align-items: right;">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
+    <script>
+        function xmenu(x) {
+        x.classList.toggle("change");
+        }
+    </script>
+    <!--------------------------------------------------------------->
+    <!--              End of Hamburger Menu                        -->
+    <!--------------------------------------------------------------->
+
+  </header>
+  
+  <div class="card">
+    <div class="card_content">
+
+      <div class="left-panel">
+        <div class="info">
+          <label id="add_task_label">Add a New Task</label>
+          <!--------------------------------------------------------------->
+          <!--                    footer Start                           -->
+          <!--------------------------------------------------------------->
+      
+            <input type="text" id="task_title" placeholder="Enter task title...">
+            
+            <br>
+
+            <input type="date" id="due_date">
+            
+            <br>
+            <input type="number" id="time" step="30" min="0" placeholder="Estimated time (mins)">
+            <script>
+            </script>
+            <br>
+
+            <select id="priority_select">
+              <option value="none"></option><!--Make this not an aceptable otpion-->
+              <option value="not_priority" style="background-color: lightgreen;">Not a priority</option>
+              <option value="medium_priorty" style="background-color: orange;">Medium Priorty</option>
+              <option value="high_priorty" style="background-color: red;">High Priorty</option>
+            </select>
+
+            <!-- Changes background color of select element to match selected option's background color-->
+            <script> 
+              const selectElement = document.getElementById('priority_select');
+              selectElement.addEventListener('change', (event) => {
+                const selectedOption = event.target.options[event.target.selectedIndex];
+                event.target.style.backgroundColor = selectedOption.style.backgroundColor;
+              });
+              </script>
+            
+            <br>
+
+            <textarea id="new_task" maxlength=150 placeholder="Enter task description..."></textarea>
+            <div class="color-picker">
+              <label for="colorOptions" id="colorPicker_label">Select a Color</label>
+              <div class="color-options">
+                <div class="color-circle" id="colorRed" data-color="#ff5555"></div>
+                <div class="color-circle" id="colorOrange" data-color="#ffb86c"></div>
+                <div class="color-circle" id="colorYellow" data-color="#f1fa8c"></div>
+                <div class="color-circle" id="colorGreen" data-color="#50fa7b"></div>
+                <div class="color-circle" id="colorBlue" data-color="#88e9fd"></div>
+                <div class="color-circle" id="colorPurple" data-color="#bd93f9"></div>
+                <div class="color-circle" id="colorPink" data-color="#ff79c6"></div>
+              </div>
+            </div>
+
+            <br>
+            
+            <button id="add_task_button">Add Task</button>
+            <button id="test">Add Task</button>
+
+
+        </div>
+      </div>
+
+
+      <div class="divider"></div> <!--divider between panels-->
+
+  
+      <div class="right-panel"> 
+        <div class="task_display">
+          <div class="color-target" id="task1">
+            <table style="width: 100%;">
+
+              <tr>
+                <th id="display_task_title" style="font-style: bold;" colspan="3">Task Ttile</th>
+                <th></th>
+                <th style="color: rgb(63, 62, 62);">Completed</th>
+              <tr>
+                <td colspan="3" id="display_description" colspan="3">descriptions and stuff</td>
+                <div></div>
+                <td>
+                <td id="display_done_checkbox"><input type="checkbox" value="done_checkbox"></td>
+              </tr>
+              <tr>
+                <td colspan="3" id="display_time"><p>{time_input} mins</p></td>
+                <td id="display_date">Due {date_input}</td>
+                <td id="display_priority">{priority} priority</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        
+      </div>
+
+    </div> <!--End of content-->
+  </div><!--End of card-->
+
+  <!--------------------------------------------------------------->
+  <!--                    footer Start                           -->
+  <!--------------------------------------------------------------->
+  <footer>
+    <p id="footer_text" style="font-size:small;"><strong style="font-family:Times New Roman">( i )</strong> For Help, look at menu and select tutorial.</p> <!--maybe make into a pop up? that can be clicked away?-->
+  </footer>
+  <!--------------------------------------------------------------->
+  <!--                     footer end                            -->
+  <!--------------------------------------------------------------->
+<h1></h1>
+
+  <script src="Girls++.js"></script>
+</body>
+</html>

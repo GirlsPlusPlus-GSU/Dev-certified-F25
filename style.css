@@ -1,0 +1,287 @@
+/* Reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+Overall, I have changed the hights and widths of most elements to be in percentages rather than fixed pixels. This allows the layout to 
+adjust more fluidly to different screen sizes. I also added a media query at the bottom to handle very small screens, stacking elements 
+vertically and adjusting sizes as needed.
+*/
+
+/* Page layout and header------------------------------------------------------------------------------------------------------------------*/
+body {
+  background-color: #f9f8fb;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.card {
+  flex: 1;
+  width: 90%;
+  margin: 2% auto;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* Header styling*/
+header{
+    background-color: #673AB7;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+#header_title {
+    font: 8rem;
+    font-weight: bold;
+}
+
+/*added a footer for infomation or contact*/
+footer {
+  margin-top: auto;
+  background-color: #673AB7;
+  width: 100%;
+  text-align: center;
+  color: rgb(225, 229, 211);
+  padding: 1%;
+  font-size: 0.9rem;
+}
+
+.main-content
+
+
+
+/*hamburger menu movement + styling*/
+/*I'll add at the end if we have time. simple and all I need is html and css, I dont rlly need js or anything. - Anna G.*/
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 20px;
+  height: 5px;
+  background-color: #efecec;
+  transition: 0.4s;
+  margin: 20%;
+}
+
+.change .bar1 {
+  transform: translate(0, 8px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -8px) rotate(45deg);
+}
+
+/* Layout inside the card */
+.card_content {
+  display: flex;
+  flex-wrap: wrap;
+  padding:  3%;
+  border-radius: 8px;
+}
+
+
+/*Input and Info Pannel (Left coloum)--------------------------------------------------------------*/
+/* Left section: Name, Duration, + icon */
+.left-panel {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+    width: 100%;
+    background-color: #522E93;
+    border-radius: 10px;
+    padding: 5%;
+    color: white;
+}
+
+#add_task_label {
+    font-size:  1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5%;
+
+}
+
+#task_title, #due_date, #new_task, #time, #priority_select{
+  width: 100%;
+  padding:2%;
+  margin-bottom: 4px;
+  border: 1px solid #522E93;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  
+}
+
+#task_title, #due_date, #new_task, #time, #priority_select:hover{
+    cursor: pointer;
+  
+}
+
+#new_task {
+    resize: vertical;
+    min-height: 10vh;
+    max-height: 25vh;
+}
+
+/*Button*/
+#add_task_button {
+    width: 100%;
+    padding: 2%;
+    background-color: #ab7dda;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+#add_task_button:hover {
+    background-color: #9b6bc9;
+  transform: scale(1);
+  box-shadow: 1px 1px #673AB7, 2px 2px rgb(220, 198, 254), 5px 5px 10px #bd9afa;
+  color: rgb(220, 220, 220);
+}
+#add_task_button:active {
+  background-color: #8f6ad3;
+}
+
+/*Color Picker-------------------------------------------------*/
+.color-picker {
+  margin-bottom: 3%;
+}
+
+#colorPicker_label{
+    display: block;
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5%;
+}
+
+.color-circle{
+    flex: 1 1 calc(14% - 10px);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: transform 0.2s, border 0.2s;
+}
+#colorRed{
+    background-color: #FF5555;
+} 
+#colorOrange{
+    background-color: #FFB86C;
+} 
+#colorYellow{
+    background-color: #F1FA8C;
+} 
+#colorGreen{
+    background-color: #50FA7B;
+} 
+#colorBlue{
+    background-color: #8BE9FD;
+} 
+#colorPurple{
+    background-color: #BD93F9
+} 
+#colorPink{
+    background-color: #FF79C6;
+} 
+
+
+.color-circle:hover {
+  transform: scale(1.1);
+}
+
+.color-circle.selected {
+  border: 2px solid #333;
+}
+
+/* Right side content blocks ----------------------------------------------------------------------*/
+.right-panel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 8px;
+  padding: 2%;
+}
+
+.task_display {
+  flex: 1;
+  padding: 3%;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  overflow-y: auto;
+  box-shadow: 10px 10px 10px rgba(0,0,0, 0.2);
+}
+
+/*Box that will change*/
+.color-target {
+  width: 100%;
+  border-radius: 6px;
+  border: 2px solid #ccc;
+  margin-top: 10px;
+  background-color: white;
+  transition: background-color 0.3s;
+}
+
+/*Tasks----------------------------------------------------------------------------------------------*/
+#targetDiv{
+    cursor: pointer;
+    width: 10%;
+    background-color: #50FA7B;
+}
+table, td, th{
+    border: 1px solid clear;
+    border-collapse: collapse; 
+    padding: 1%;
+}
+#display_task_title{
+    text-align: left;
+}
+#display_description{
+    color: rgb(64, 64, 64);
+}
+#display_date, #display_time, #display_priority{
+    font-size:  .7rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: rgb(91, 91, 91);
+}
+
+/* 
+Got rid of this portion. new code uses a mixture of % and px for size adjustments, in order to automatically adjust to screen sizes 
+*/
